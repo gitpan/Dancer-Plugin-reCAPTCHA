@@ -20,12 +20,13 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Dancer::Plugin::reCAPTCHA",
   "PREREQ_PM" => {
-    "Captcha::reCAPTCHA" => 0
+    "Captcha::reCAPTCHA" => 0,
+    "Dancer" => "1.3110"
   },
   "TEST_REQUIRES" => {
     "Test::More" => "0.88"
   },
-  "VERSION" => "0.1",
+  "VERSION" => "0.2",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -15,4 +15,5 @@ meta-spec:
 name: Dancer-Plugin-reCAPTCHA
 requires:
   Captcha::reCAPTCHA: 0
-version: 0.1
+  Dancer: 1.3110
+version: 0.2

@@ -1,7 +1,7 @@
 package Dancer::Plugin::reCAPTCHA;
 # ABSTRACT: Easily integrate reCAPTCHA into your Dancer applications
 {
-    $Dancer::Plugin::reCAPTCHA::VERSION = '0.1';
+    $Dancer::Plugin::reCAPTCHA::VERSION = '0.2';
 }
 
 
@@ -47,7 +47,7 @@ Dancer::Plugin::reCAPTCHA - Easily integrate reCAPTCHA into your Dancer applicat
 
 =head1 VERSION
 
-version 0.1
+version 0.2
 
 =head1 SYNOPSIS
 
@@ -105,7 +105,7 @@ For example:
     );
     die "User didn't match the CAPTCHA" unless $result->{ is_valid };
 
-See L< Captcha::reCAPTCHA > for a description of the result hash.
+See L<Captcha::reCAPTCHA> for a description of the result hash.
 
 =head2 TODO
 
@@ -117,15 +117,15 @@ Add a real test suite.
 
 =item *
 
-L< Captcha::reCAPTCHA >
+L<Captcha::reCAPTCHA>
 
 =item *
 
-L< Dancer::Plugin >
+L<Dancer::Plugin>
 
 =item *
 
-L< Dancer >
+L<Dancer>
 
 =back
 
