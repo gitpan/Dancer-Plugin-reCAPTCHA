@@ -1,7 +1,7 @@
 package Dancer::Plugin::reCAPTCHA;
 # ABSTRACT: Easily integrate reCAPTCHA into your Dancer applications
 {
-    $Dancer::Plugin::reCAPTCHA::VERSION = '0.2';
+    $Dancer::Plugin::reCAPTCHA::VERSION = '0.3';
 }
 
 
@@ -9,11 +9,11 @@ use Dancer ':syntax';
 use Dancer::Plugin;
 use Captcha::reCAPTCHA;
 
-my $conf = plugin_setting();
 my $rc   = Captcha::reCAPTCHA->new;
 
 
 register recaptcha_display => sub {
+    my $conf = plugin_setting();
     return $rc->get_html( 
         $conf->{ public_key },
         undef,
@@ -25,6 +25,7 @@ register recaptcha_display => sub {
 
 register recaptcha_check => sub {
     my ( $challenge, $response ) = @_;
+    my $conf = plugin_setting();
     return $rc->check_answer(
         $conf->{ private_key },
         request->remote_address,
@@ -41,13 +42,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Dancer::Plugin::reCAPTCHA - Easily integrate reCAPTCHA into your Dancer applications
 
 =head1 VERSION
 
-version 0.2
+version 0.3
 
 =head1 SYNOPSIS
 
@@ -135,7 +138,7 @@ Jason A. Crome <cromedome@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Jason A. Crome.
+This software is copyright (c) 2014 by Jason A. Crome.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
